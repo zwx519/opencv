@@ -1,5 +1,3 @@
-##视频地址：https : //www.bilibili.com/video/av2499861
-代码
 ＃目录
 1. 概述与环境  tutorial_1_demo
 2. 图像和视频读取与保存  tutorial_1_RW
