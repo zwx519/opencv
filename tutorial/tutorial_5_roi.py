@@ -1,4 +1,5 @@
 # roi 即兴趣区域，对图像提取想要的部分
+# 图像roi与泛洪填充 
 
 import cv2 as cv
 import numpy as np
@@ -9,7 +10,7 @@ def roi_test(src):
     face = src[100:510, 200:600]
     gray = cv.cvtColor(face, cv.COLOR_BGR2GRAY)  # face彩色图片变成灰度图片
     cv.imshow("gray", gray)
-    back_face = cv.cvtColor(gray, cv.COLOR_GRAY2BGR)
+    back_face = cv.cvtColor(gray, cv.COLOR_GRAY2BGR)#back_face灰度图像变为彩色图像
     cv.imshow("back_face", back_face)
     src[100:510, 200:600] = back_face
     cv.imshow("face", src)
@@ -17,9 +18,10 @@ def roi_test(src):
 def fill_color_demo(image):
     copyImg = image.copy()
     h, w = image.shape[:2]
-    mask = np.zeros([h+2, w+2], np.uint8)
-
-    # 参数：原图，mask图，起始点，起始点值减去该值作为最低值，起始点值加上该值作为最高值，彩色图模式
+    mask = np.zeros([h+2, w+2], np.uint8)#+2是官方函数要求
+    #floodFill函数：漫水填充算法：我觉得可通俗理解为颜色替换
+    # 参数：原图，mask图，起始像素点，填充的颜色，起始点值减去该值作为最低值，起始点值加上该值作为最高值，彩色图模式
+    #个人认为是 其实是读取参数3所在像素点的BGR值，然后将该点BGR值与参数5,6 分别加减做为目标区域的上下限，在这个区域内的便用参数4来填充
     cv.floodFill(copyImg, mask, (30, 30), (0, 255, 255), (100,100,100), (50, 50, 50), cv.FLOODFILL_FIXED_RANGE)
     cv.imshow("fill_color_demo", copyImg)
 
