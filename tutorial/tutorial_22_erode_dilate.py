@@ -1,3 +1,7 @@
+#膨胀腐蚀操作
+#cv.getStructuringElement(cv.MORPH_RECT, (5, 5))第一个参数表示内核的形状，有三种形状可以选择。矩形：MORPH_RECT 交叉形：MORPH_CROSS;
+#椭圆形：MORPH_ELLIPSE;第二和第三个参数分别是内核的尺寸以及锚点的位置
+
 import cv2 as cv
 import numpy as np
 
