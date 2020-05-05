@@ -1,10 +1,11 @@
+#直方图
 import cv2 as cv
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 def plot_demo(image):
-    plt.hist(image.ravel(), 256, [0, 256])  # image.ravel()将图像展开，256为bins数量，[0, 256]为范围
+    plt.hist(image.ravel(), 256, [0, 256])  # image.ravel()将图像展开，256为bins数量，[0, 256]为范围，unit8类型bin的数量是256
     plt.show()
 
 
