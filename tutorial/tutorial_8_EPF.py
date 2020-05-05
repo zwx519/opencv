@@ -1,3 +1,4 @@
+ #边缘保留滤波
 import cv2 as cv
 import numpy as np
 
@@ -9,7 +10,7 @@ def bi_demo(image):  # bilateralFilter(src, d, sigmaColor, sigmaSpace, dst=None,
     在图像的平坦区域，像素值变化很小，对应的像素范围域权重接近于1，此时空间域权重起主要作用，相当于进行高斯模糊；
     在图像的边缘区域，像素值变化很大，像素范围域权重变大，从而保持了边缘的信息。
     """
-    dst = cv.bilateralFilter(image, 0, 100, 15)  # 高斯双边
+    dst = cv.bilateralFilter(image, 0, 100, 15)  # 高斯双边滤波
     cv.imshow("bi_demo", dst)
 
 
