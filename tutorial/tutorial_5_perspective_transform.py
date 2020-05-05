@@ -1,9 +1,10 @@
+#几何变换
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 
 # 学习对图像进行各种几个变换，例如移动，旋转，仿射变换等。
-# 函数为：cv2.getPerspectiveTransform
+# 函数为：cv2..getPerspectiveTransform
 # 代码参考：https://blog.csdn.net/songchunxiao1991/article/details/80226510
 # 变换 OpenCV提供了两个变换函数，cv2.warpAﬃne和cv2.warpPerspective，
 # 使用这两个函数你可以实现所有类型的变换。
