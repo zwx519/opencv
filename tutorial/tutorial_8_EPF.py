@@ -22,7 +22,7 @@ def bi_demo(image):  # bilateralFilter(src, d, sigmaColor, sigmaSpace, dst=None,
 # @param maxLevel Maximum level of the pyramid for the segmentation.
 # @param termcrit Termination criteria: when to stop meanshift iterations.
 def shift_demo(image):  # 均值迁移
-    dst = cv.pyrMeanShiftFiltering(image, 10, 50)
+    dst = cv.pyrMeanShiftFiltering(image, 10, 50)#个人认为该函数用于显微镜下细胞的降噪处理是十分友好的
     cv.imshow("shift_demo", dst)
 
 if __name__ == '__main__':
