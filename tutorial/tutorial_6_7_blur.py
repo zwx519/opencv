@@ -54,7 +54,7 @@ def gaussian_noise(image):  # 加高斯噪声
     h, w, c = image.shape
     for row in range(h):
         for col in range(w):
-            s = np.random.normal(0, 20, 3)  # normal(loc=0.0, scale=1.0, size=None),均值，标准差，大小
+            s = np.random.normal(0, 20, 3)  # 正态分布normal(loc=0.0, scale=1.0, size=None),均值，标准差，大小默认None
 
             b = image[row, col, 0]
             g = image[row, col, 1]
