@@ -2,7 +2,6 @@ import cv2 as cv
 import numpy as np
 
 
-# 关于霍夫变换的相关知识可以看看这个博客：https://blog.csdn.net/kbccs/article/details/79641887
 def line_detection(image):
     gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
     edges = cv.Canny(gray, 50, 150, apertureSize=3)
